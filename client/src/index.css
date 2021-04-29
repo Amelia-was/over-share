@@ -121,10 +121,13 @@ nav a:hover {
   transition: all 0.5s;
 }
 
-.btn:hover,
-.pill:hover {
+.btn:hover, .pill:hover {
   color: var(--secondary);
   background-color: var(--dark);
+}
+
+.btn:hover, .pill:hover a {
+  color: var(--secondary);
 }
 
 .btn-inline {
