@@ -1,15 +1,14 @@
 import React from 'react';
-import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
+import PostList from '../components/PostList';
 
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_THOUGHTS, QUERY_ME_BASIC } from '../utils/queries';
+import { QUERY_POSTS, QUERY_ME_BASIC } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { loading, data } = useQuery(QUERY_POSTS);
   const { data: userData } = useQuery(QUERY_ME_BASIC);
-  const thoughts = data?.thoughts || [];
+  const posts = data?.posts || [];
 
   const loggedIn = Auth.loggedIn();
 
@@ -21,7 +20,7 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-              <ThoughtList thoughts={thoughts} />
+              <PostList posts={posts} />
             )}
         </div>
       </div>

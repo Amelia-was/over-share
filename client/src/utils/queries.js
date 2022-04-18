@@ -1,36 +1,36 @@
 import gql from 'graphql-tag';
 
-export const QUERY_THOUGHTS = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+export const QUERY_POSTS = gql`
+  query posts($username: String) {
+    posts(username: $username) {
       _id
-      thoughtText
+      postBody
       createdAt
       username
-      reactionCount
-      reactions {
+      commentCount
+      comments {
         _id
         createdAt
         username
-        reactionBody
+        commentBody
       }
     }
   }
 `;
 
-export const QUERY_THOUGHT = gql`
-  query thought($id: ID!) {
-    thought(_id: $id) {
+export const QUERY_POST = gql`
+  query post($id: ID!) {
+    post(_id: $id) {
       _id
-      thoughtText
+      postBody
       createdAt
       username
-      reactionCount
-      reactions {
+      commentCount
+      comments {
         _id
         createdAt
         username
-        reactionBody
+        commentBody
       }
     }
   }
@@ -42,16 +42,11 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      friendCount
-      friends {
+      posts {
         _id
-        username
-      }
-      thoughts {
-        _id
-        thoughtText
+        postBody
         createdAt
-        reactionCount
+        commentCount
       }
     }
   }
@@ -63,22 +58,17 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      friendCount
-      thoughts {
+      posts {
         _id
-        thoughtText
+        postBody
         createdAt
-        reactionCount
-        reactions {
+        commentCount
+        comments {
           _id
           createdAt
-          reactionBody
+          commentBody
           username
         }
-      }
-      friends {
-        _id
-        username
       }
     }
   }
@@ -90,11 +80,6 @@ export const QUERY_ME_BASIC = gql`
       _id
       username
       email
-      friendCount
-      friends {
-        _id
-        username
-      }
     }
   }
 `;

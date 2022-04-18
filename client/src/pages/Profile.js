@@ -1,10 +1,10 @@
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 
-import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
+import PostList from '../components/PostList';
+import PostForm from '../components/PostForm';
 
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
@@ -46,12 +46,12 @@ const Profile = () => {
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
           <h3></h3>
-          <ThoughtList thoughts={user.thoughts} title={`${user.username}'s thoughts...`} />
+          <PostList posts={user.posts} title={`${user.username}'s posts...`} />
         </div>
 
       </div>
 
-      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
+      <div className="mb-3">{!userParam && <PostForm />}</div>
     </div>
   );
 };

@@ -287,7 +287,6 @@ a.text-dark:hover {
 .card-header {
   color: #c2a83e;
   background-color: #1f363d;
-  padding: 0.625rem;
   border-radius: 8px 8px 0 0;
 }
 
@@ -299,14 +298,14 @@ a.text-dark:hover {
   border-bottom: solid 1px #1f363d;
 }
 
+.comment:last-child {
+  border: none;
+}
+
 .form-label,
 .form-input,
 .form-textarea {
   display: block;
-}
-
-.form-label {
-  margin: 0.625rem 0 0.25rem;
 }
 
 .form-input {
@@ -1212,7 +1211,7 @@ body {
   margin-left: 0;
 }
 
-.m-1 {
+.m-1, .form-label {
   margin: 0.3rem;
 }
 
@@ -1332,7 +1331,7 @@ body {
   padding-left: 0;
 }
 
-.p-1 {
+.p-1, .card-header {
   padding: 0.3rem;
 }
 

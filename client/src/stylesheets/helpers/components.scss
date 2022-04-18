@@ -89,7 +89,7 @@ a.text-dark:hover {
 .card-header {
     color: $secondary;
     background-color: $dark;
-    padding: 0.625rem; // CHANGE
+    @extend .p-1;
     border-radius: $border-radius $border-radius 0 0;
 }
 
@@ -102,6 +102,10 @@ a.text-dark:hover {
     border-bottom: solid 1px $dark;
 }
 
+.comment:last-child {
+    border: none;
+}
+
 // form
 .form-label,
 .form-input,
@@ -110,7 +114,7 @@ a.text-dark:hover {
 }
 
 .form-label {
-    margin: 0.625rem 0 0.25rem; // CHANGE
+    @extend .m-1;
 }
 
 .form-input {
