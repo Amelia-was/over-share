@@ -1,0 +1,124 @@
+@import 'base';
+
+// nav
+nav {
+    width: 100%;
+    justify-content: center;
+}
+
+nav a {
+    @extend .p-2;
+    @extend .mr-2;
+    transition: all 0.2s;
+}
+
+nav a:visited {
+    color: inherit;
+}
+
+nav a:last-child {
+    margin: 0;
+}
+
+nav a:hover {
+    color: $secondary;
+    background-color: $dark;
+}
+
+// links
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    color: $secondary;
+    transition: $transition;
+}
+
+.link-primary {
+    color: $primary;
+}
+
+.link-secondary {
+    color: $secondary;
+}
+
+a.text-dark:hover {
+    color: $text;
+}
+
+// buttons
+.btn, .pill {
+    font-size: 1rem;
+    text-decoration: none;
+    padding: $smallestSpacer;
+    border-radius: $border-radius;
+    border: none;
+    outline: none;
+    color: $text;
+    background-color: $secondary;
+    transition: $transition;
+}
+
+.btn:hover,
+.pill:hover {
+    cursor: pointer;
+    background: $dark;
+}
+
+.btn-inline {
+    display: inline;
+}
+
+.heart:hover, .heart-liked {
+    cursor: pointer;
+    transition: $transition;
+    color: $primary;
+}
+
+// card
+.card {
+    @extend .mb-3;
+    border-radius: $border-radius;
+    background-color: $lightGray;
+    color: $text;
+}
+
+.card-header {
+    color: $secondary;
+    background-color: $dark;
+    padding: 0.625rem; // CHANGE
+    border-radius: $border-radius $border-radius 0 0;
+}
+
+.card-body {
+    padding: 2.5%; // CHANGE
+}
+
+// comments
+.comment {
+    border-bottom: solid 1px $dark;
+}
+
+// form
+.form-label,
+.form-input,
+.form-textarea {
+    display: block;
+}
+
+.form-label {
+    margin: 0.625rem 0 0.25rem; // CHANGE
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.2rem 0;
+    font-size: 1.2rem;
+    border: 2px solid $dark;
+    border-radius: $border-radius;
+}
+

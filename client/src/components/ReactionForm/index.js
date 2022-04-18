@@ -39,10 +39,10 @@ const ReactionForm = ({ thoughtId }) => {
                 {error && <span className="ml-2">Something went wrong...</span>}
             </p>
             <form 
-                className="flex-row justify-center justify-space-between-md align-stretch"
+                className="flex-row justify-center justify-space-between-md align-stretch mb-2"
                 onSubmit={handleFormSubmit}>
                 <textarea
-                    placeholder="Leave a reaction to this thought..."
+                    placeholder="Leave a comment..."
                     className="form-input col-12 col-md-9"
                     value={reactionBody}
                     onChange={handleChange}

@@ -1,34 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const ThoughtList = ({ thoughts, title }) => {
+const ThoughtList = ({ thoughts }) => {
+  const [likes, setLikes] = useState(0);
+  const [liked, setLiked] = useState(false);
+
   if (!thoughts.length) {
     return <h3>No Thoughts Yet</h3>;
   }
 
   return (
     <div>
-      <h3>{title}</h3>
       {thoughts &&
         thoughts.map(thought => (
           <div key={thought._id} className="card mb-3">
             <p className="card-header">
               <Link
                 to={`/profile/${thought.username}`}
-                style={{ fontWeight: 700 }}
-                className="text-light"
+                className='text-primary bold'
               >
                 {thought.username}
               </Link>{' '}
               on {thought.createdAt}
             </p>
             <div className="card-body">
-              <Link to={`/thought/${thought._id}`}>
-                <p>{thought.thoughtText}</p>
-                <p className="mb-0">
+              <p className='mb-2'>{thought.thoughtText}</p>
+              <div className='flex-row'>
+
+                <Link className='text-dark' to={`/thought/${thought._id}`}>
                   {thought.reactionCount} Comments
+                </Link>
+                <p>
+                  <span className={`heart ml-2 mr-1 ${liked ? 'heart-liked' : ''}`} onClick={() => {
+                    if (liked) {
+                      setLikes(likes - 1)
+                      setLiked(false)
+                    } else {
+                      setLikes(likes + 1)
+                      setLiked(true)
+                    }
+                  }}>♥</span>{likes}
                 </p>
-              </Link>
+              </div>
             </div>
           </div>
         ))}

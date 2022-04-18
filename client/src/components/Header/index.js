@@ -12,15 +12,17 @@ const Header = () => {
   return (
     <header className="bg-secondary mb-4 py-2 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
+        <div className='flex-column'>
         <Link to="/">
-          <h1>Deep Thoughts</h1>
+          <h1>OverShare</h1>
         </Link>
-        <h2>Remember, your bad internet opinions will live forever, so maybe you should think twice before you say that? (LOL, JK)</h2>
+        <h3>Let your bad internet opinions live forever.</h3>
+        </div>
 
-        <nav className="text-center">
+        <nav className="text-center p-2">
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Me</Link>
+              <Link to="/profile">Profile</Link>
               <a href="/" onClick={logout}>
                 Logout
               </a>

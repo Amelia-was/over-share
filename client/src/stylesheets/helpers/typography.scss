@@ -1,0 +1,49 @@
+@use 'sass:list';
+@import 'base';
+
+@for $i from 1 through 5 {
+    h#{$i} {
+        font-family: $font-heading;
+        font-size: #{list.nth($font-sizes, $i)}rem;
+        color: $text;
+        line-height: 1.25;
+    }
+}
+
+h3 {
+    font-style: italic;
+}
+
+p {
+    color: $dark;
+}
+
+.page-title {
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+}
+
+.text-error {
+    color: $error;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.bold {
+    font-weight: 700;
+}

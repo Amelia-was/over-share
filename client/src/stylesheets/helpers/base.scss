@@ -2,33 +2,37 @@
 
 $white: #f2f2f2;
 $black: #000;
-$purple: #723d46;
-$pink: #e26d5c;
-$green: #c9cba3;
-$darkGreen: #b6b893;
-$lightYellow: #ffe1a8;
-$darkPurple: #472d30;
-$lightPurple: #80597e;
-$yellow: #e09f3e;
+$dark: #1f363d;
+$teal: #70a9a1;
+$yellow: #c2a83e;
+$darkPink: #750d37;
+$medPink: #ff5e5b;
+$lightPink: #b8847e;
+$lightGray: #ded3d5;
+$lighterGray: #E2E2E2;
 
-$lightGray: #E2E2E2;
+$error: $medPink;
 
-$primary: $purple;
-$dark-primary: $darkPurple;
-$secondary: $green;
-$dark-secondary: $darkGreen;
-$tertiary: $pink;
+$primary: $teal;
+$dark-primary: $dark;
+$secondary: $yellow;
+$dark-tertiary: $darkPink;
+$tertiary: $medPink;
+$light-tertiary: $lightPink;
 $bg: $white;
 $text: $black;
-$dark: $black;
 
-$colors: ('primary': $primary,
+$colors: (
+    'primary': $primary,
     'dark-primary': $dark-primary,
     'secondary': $secondary,
-    'dark-secondary': $dark-secondary,
+    'dark-tertiary': $dark-tertiary,
     'tertiary': $tertiary,
+    'light-gray': $lightGray,
+    'lighter-gray': $lighterGray,
     'white': $white,
-    'dark': $dark);
+    'dark': $dark,
+    'text': $text);
 
 @each $color-name,
 $color in $colors {
@@ -58,21 +62,23 @@ $sides: ('': '', '-top': 't', '-bottom': 'b', '-right': 'r', '-left': 'l');
 
 $border-radius: 8px;
 
-$font-body: 'Open Sans',
-Helvetica,
-Arial,
-sans-serif;
-$font-heading: 'Averia Serif Libre',
-cursive;
-$font-sizes: (96, 36, 24, 20, 18);
+$font-body: 'Open Sans', Helvetica, Arial, sans-serif;
+$font-heading: 'Averia Serif Libre', Garamond, serif;
+$font-sizes: (3, 2.5, 2, 1.5, 1);
 
 $box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.1);
 
 $transition: all 0.3s ease-in;
 
 body {
-    background: $bg;
+    background: $white;
     font-family: $font-body;
+    color: $text;
+}
+
+html,
+body {
+    min-height: 100%;
 }
 
 // reset
@@ -80,4 +86,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    font-size: 18px;
 }
