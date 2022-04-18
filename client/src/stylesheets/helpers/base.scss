@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+
+$white: #f2f2f2;
+$black: #000;
+$purple: #723d46;
+$pink: #e26d5c;
+$green: #c9cba3;
+$darkGreen: #b6b893;
+$lightYellow: #ffe1a8;
+$darkPurple: #472d30;
+$lightPurple: #80597e;
+$yellow: #e09f3e;
+
+$lightGray: #E2E2E2;
+
+$primary: $purple;
+$dark-primary: $darkPurple;
+$secondary: $green;
+$dark-secondary: $darkGreen;
+$tertiary: $pink;
+$bg: $white;
+$text: $black;
+$dark: $black;
+
+$colors: ('primary': $primary,
+    'dark-primary': $dark-primary,
+    'secondary': $secondary,
+    'dark-secondary': $dark-secondary,
+    'tertiary': $tertiary,
+    'white': $white,
+    'dark': $dark);
+
+@each $color-name,
+$color in $colors {
+    .bg-#{$color-name} {
+        background: $color;
+    }
+}
+
+@each $color-name,
+$color in $colors {
+    .text-#{$color-name} {
+        color: $color;
+    }
+}
+
+// spacing
+$zero: 0;
+$smallestSpacer: 0.3rem;
+$smallSpacer: 0.75rem;
+$bigSpacer: 1rem;
+$biggerSpacer: 2rem;
+$biggestSpacer: 3rem;
+
+$margin-padding: ('margin': 'm', 'padding': 'p');
+$spacers: ($zero: $zero, $smallestSpacer: '1', $smallSpacer: '2', $bigSpacer: '3', $biggerSpacer: '4', $biggestSpacer: '5');
+$sides: ('': '', '-top': 't', '-bottom': 'b', '-right': 'r', '-left': 'l');
+
+$border-radius: 8px;
+
+$font-body: 'Open Sans',
+Helvetica,
+Arial,
+sans-serif;
+$font-heading: 'Averia Serif Libre',
+cursive;
+$font-sizes: (96, 36, 24, 20, 18);
+
+$box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.1);
+
+$transition: all 0.3s ease-in;
+
+body {
+    background: $bg;
+    font-family: $font-body;
+}
+
+// reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

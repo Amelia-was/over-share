@@ -15,6 +15,7 @@ const Header = () => {
         <Link to="/">
           <h1>Deep Thoughts</h1>
         </Link>
+        <h2>Remember, your bad internet opinions will live forever, so maybe you should think twice before you say that? (LOL, JK)</h2>
 
         <nav className="text-center">
           {Auth.loggedIn() ? (
