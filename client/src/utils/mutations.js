@@ -30,6 +30,7 @@ export const ADD_POST = gql`
       _id
       postBody
       createdAt
+      likes
       username
       commentCount
       comments {
@@ -43,6 +44,23 @@ export const ADD_COMMENT = gql`
   mutation addComment($postId: ID!, $commentBody: String!) {
     addComment(postId: $postId, commentBody: $commentBody) {
       _id
+      likes
+      commentCount
+      comments {
+        _id
+        commentBody
+        createdAt
+        username
+      }
+    }
+  }
+`;
+
+export const ADD_LIKE = gql`
+  mutation addLike($postId: ID!) {
+    addLike(postId: $postId) {
+      _id
+      likes
       commentCount
       comments {
         _id

@@ -33,15 +33,15 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-space-between min-100-vh">
+        <div className='flex-column justify-space-between min-100-vh'>
           <Header />
-          <div className="container">
+          <div className='container'>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/profile/:username?" component={Profile} />
-              <Route exact path="/post/:id" component={SinglePost} />
+              <Route exact path='/' component={Home} />
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/signup' component={Signup} />
+              <Route exact path='/profile/:username?' component={Profile} />
+              <Route exact path='/post/:id' component={SinglePost} />
 
               <Route component={NoMatch} />
             </Switch>

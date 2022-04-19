@@ -6,15 +6,15 @@ import Auth from '../../utils/auth';
 
 const CommentList = ({ comments, post }) => {
     return (
-        <div className="card mb-3">
-            <div className="card-header">
-                <span className="text-light">Comments</span>
+        <div className='card mb-3'>
+            <div className='card-header'>
+                <span className='text-light'>Comments</span>
             </div>
-            <div className="card-body">
+            <div className='card-body'>
                 {post.commentCount > 0 ?
                     comments.map(comment => (
-                        <p className="comment mb-3 p-3" key={comment._id}>
-                            {comment.commentBody} {'// '}
+                        <p className='comment mb-3 p-3' key={comment._id}>
+                            {comment.commentBody} {'《 '}
                             <Link className='text-text bold' to={`/profile/${comment.username}`}>
                                 {comment.username} on {comment.createdAt}
                             </Link>

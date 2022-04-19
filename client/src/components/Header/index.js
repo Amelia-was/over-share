@@ -10,27 +10,28 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
+    <header className='bg-secondary mb-4 py-2 flex-row align-center'>
+      <div className='container flex-row justify-space-between-lg justify-center align-center'>
         <div className='flex-column'>
-        <Link to="/">
+        <Link to='/'>
           <h1>OverShare</h1>
         </Link>
         <h3>Let your bad internet opinions live forever.</h3>
         </div>
 
-        <nav className="text-center p-2">
+        <nav className='text-center p-2'>
+          {/* conditionally show nav links */}
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Profile</Link>
-              <a href="/" onClick={logout}>
+              <Link to='/profile'>Profile</Link>
+              <a href='/' onClick={logout}>
                 Logout
               </a>
             </>
           ) : (
               <>
-                <Link to="/login">Login</Link>
-                <Link to="/signup">Signup</Link>
+                <Link to='/login'>Login</Link>
+                <Link to='/signup'>Signup</Link>
               </>
             )}
         </nav>

@@ -7,6 +7,7 @@ export const QUERY_POSTS = gql`
       postBody
       createdAt
       username
+      likes
       commentCount
       comments {
         _id
@@ -25,6 +26,7 @@ export const QUERY_POST = gql`
       postBody
       createdAt
       username
+      likes
       commentCount
       comments {
         _id
@@ -47,6 +49,7 @@ export const QUERY_USER = gql`
         postBody
         createdAt
         commentCount
+        likes
       }
     }
   }
@@ -62,6 +65,7 @@ export const QUERY_ME = gql`
         _id
         postBody
         createdAt
+        likes
         commentCount
         comments {
           _id

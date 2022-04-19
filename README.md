@@ -8,3 +8,6 @@ Ready to share more than anyone should on Dolly Parton's internet? You've come t
 `npm install`  
 3. Start the development server.  
 `npm start`
+
+## Usage
+View posts from the homepage or search for a user to see their posts. You must be logged in to create a post, comment, or like!

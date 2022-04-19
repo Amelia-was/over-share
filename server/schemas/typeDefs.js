@@ -13,6 +13,7 @@ const typeDefs = gql`
     postBody: String
     createdAt: String
     username: String
+    likes: Int
     commentCount: Int
     comments: [Comment]
   }
@@ -42,6 +43,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     addPost(postBody: String!): Post
     addComment(postId: ID!, commentBody: String!): Post
+    addLike(postId: ID!): Post
   }
 `;
 

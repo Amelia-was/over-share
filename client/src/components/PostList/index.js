@@ -1,20 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_LIKE } from '../../utils/mutations';
+import Auth from '../../utils/auth';
+
 const PostList = ({ posts }) => {
-  const [likes, setLikes] = useState(0);
-  const [liked, setLiked] = useState(false);
+
+  const [addLike, { error }] = useMutation(ADD_LIKE);
 
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
-  }
+  };
+
+  const handleLike = async (postId, event) => {
+    event.persist();
+
+    try {
+      // edit post in database
+      await addLike({
+        variables: { postId }
+      });
+      
+      event.target.classList.add('heart-liked');
+
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
     <div>
       {posts &&
         posts.map(post => (
-          <div key={post._id} className="card mb-3">
-            <p className="card-header">
+          <div key={post._id} className='card mb-3'>
+            <p className='card-header'>
               <Link
                 to={`/profile/${post.username}`}
                 className='text-primary bold'
@@ -23,7 +43,7 @@ const PostList = ({ posts }) => {
               </Link>{' '}
               on {post.createdAt}
             </p>
-            <div className="card-body">
+            <div className='card-body'>
               <p className='mb-2'>{post.postBody}</p>
               <div className='flex-row'>
 
@@ -31,15 +51,7 @@ const PostList = ({ posts }) => {
                   {post.commentCount} Comments
                 </Link>
                 <p>
-                  <span className={`heart ml-2 mr-1 ${liked ? 'heart-liked' : ''}`} onClick={() => {
-                    if (liked) {
-                      setLikes(likes - 1)
-                      setLiked(false)
-                    } else {
-                      setLikes(likes + 1)
-                      setLiked(true)
-                    }
-                  }}>♥</span>{likes}
+                  <span className={`heart ml-2 mr-1 ${!Auth.loggedIn() && 'no-click'}`} onClick={(e) => {handleLike(post._id, e)}}>♥</span>{post.likes}
                 </p>
               </div>
             </div>

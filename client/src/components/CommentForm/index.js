@@ -8,6 +8,7 @@ const CommentForm = ({ postId }) => {
 
     const [addComment, { error }] = useMutation(ADD_COMMENT);
 
+    // change for comment form, keeps track of comment length
     const handleChange = event => {
         if (event.target.value.length <= 280) {
             setBody(event.target.value);
@@ -39,16 +40,16 @@ const CommentForm = ({ postId }) => {
                 {error && <span className="ml-2">Something went wrong...</span>}
             </p>
             <form 
-                className="flex-row justify-center justify-space-between-md align-stretch mb-2"
+                className='flex-row justify-center justify-space-between-md align-stretch mb-2'
                 onSubmit={handleFormSubmit}>
                 <textarea
-                    placeholder="Leave a comment..."
-                    className="form-input col-12 col-md-9"
+                    placeholder='Leave a comment...'
+                    className='form-input col-12 col-md-9'
                     value={commentBody}
                     onChange={handleChange}
                 ></textarea>
 
-                <button className="btn col-12 col-md-3" type="submit">
+                <button className='btn col-12 col-md-3' type='submit'>
                     Submit
                 </button>
             </form>

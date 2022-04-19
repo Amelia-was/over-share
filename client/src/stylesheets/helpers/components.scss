@@ -53,7 +53,7 @@ a.text-dark:hover {
 .btn, .pill {
     font-size: 1rem;
     text-decoration: none;
-    padding: $smallestSpacer;
+    @extend .p-1;
     border-radius: $border-radius;
     border: none;
     outline: none;
@@ -78,6 +78,10 @@ a.text-dark:hover {
     color: $primary;
 }
 
+.no-click {
+    pointer-events: none;
+}
+
 // card
 .card {
     @extend .mb-3;
@@ -94,7 +98,7 @@ a.text-dark:hover {
 }
 
 .card-body {
-    padding: 2.5%; // CHANGE
+    @extend .p-2;
 }
 
 // comments
@@ -119,10 +123,9 @@ a.text-dark:hover {
 
 .form-input {
     width: 100%;
-    padding: 0.75rem;
+    @extend .p-2;
     margin: 0.2rem 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: 2px solid $dark;
     border-radius: $border-radius;
 }
-

@@ -84,6 +84,19 @@ const resolvers = {
       }
 
       throw new AuthenticationError('You need to be logged in!');
+    },
+    addLike: async (parent, { postId }, context) => {
+      if (context.user) {
+        const updatedPost = await Post.findOneAndUpdate(
+          { _id: postId },
+          { $inc: { likes: 1 } },
+          { new: true, runValidators: true }
+        );
+
+        return updatedPost;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
     }
   }
 };

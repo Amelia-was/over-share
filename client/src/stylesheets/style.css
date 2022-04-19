@@ -253,7 +253,6 @@ a.text-dark:hover {
 .btn, .pill {
   font-size: 1rem;
   text-decoration: none;
-  padding: 0.3rem;
   border-radius: 8px;
   border: none;
   outline: none;
@@ -278,6 +277,10 @@ a.text-dark:hover {
   color: #70a9a1;
 }
 
+.no-click {
+  pointer-events: none;
+}
+
 .card {
   border-radius: 8px;
   background-color: #ded3d5;
@@ -288,10 +291,6 @@ a.text-dark:hover {
   color: #c2a83e;
   background-color: #1f363d;
   border-radius: 8px 8px 0 0;
-}
-
-.card-body {
-  padding: 2.5%;
 }
 
 .comment {
@@ -310,9 +309,8 @@ a.text-dark:hover {
 
 .form-input {
   width: 100%;
-  padding: 0.75rem;
   margin: 0.2rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 2px solid #1f363d;
   border-radius: 8px;
 }
@@ -587,12 +585,6 @@ h3 {
 
 p {
   color: #1f363d;
-}
-
-.page-title {
-  text-align: center;
-  width: 100%;
-  font-size: 2.5rem;
 }
 
 .text-error {
@@ -1331,7 +1323,7 @@ body {
   padding-left: 0;
 }
 
-.p-1, .card-header {
+.p-1, .btn, .pill, .card-header {
   padding: 0.3rem;
 }
 
@@ -1351,7 +1343,7 @@ body {
   padding-left: 0.3rem;
 }
 
-.p-2, nav a {
+.p-2, nav a, .card-body, .form-input {
   padding: 0.75rem;
 }
 
