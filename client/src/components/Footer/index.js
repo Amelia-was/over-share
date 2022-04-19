@@ -7,7 +7,7 @@ const Footer = () => {
         <p className='mr-2'>
           &copy;2022 OverShare
         </p>
-        <a className='text-dark' href='https://github.com/amelia-was'>github</a>
+        <a className='text-dark' target='_blank' rel='noopener noreferrer' href='https://github.com/Amelia-was/over-share'>github</a>
       </div>
     </footer>
   );

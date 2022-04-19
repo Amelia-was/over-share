@@ -60,14 +60,14 @@ const Signup = () => {
               />
               <input
                 className='form-input'
-                placeholder='******'
+                placeholder='Password'
                 name='password'
                 type='password'
                 id='password'
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='btn d-block w-100' type='submit'>
+              <button className='btn d-block w-100 p-2' type='submit'>
                 Submit
               </button>
             </form>
